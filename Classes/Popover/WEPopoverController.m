@@ -587,8 +587,8 @@ static void animate(NSTimeInterval duration, void (^animationBlock)(void), void 
         } else {
             w = [[UIApplication sharedApplication] keyWindow];
         }
-        if (w.subviews.count > 0 && (theView == nil || [self isView:theView inSameHierarchyAsView:[w.subviews objectAtIndex:0]])) {
-            return [w.subviews objectAtIndex:0];
+        if (w.subviews.count > 0 && (theView == nil || [self isView:theView inSameHierarchyAsView:[w.subviews lastObject]])) {
+            return [w.subviews lastObject];
         } else {
             return w;
         }
